@@ -5,6 +5,13 @@ terraform {
       version = "~> 5.0"
     }
   }
+
+  # Configure the backend to store the Terraform state file in S3
+  backend "s3" {
+    bucket = "terraform-state-brady-katler"
+    key = "terraform.tfstate"
+    region = "us-east-1"
+  }
 }
 
 # Configure the AWS Provider
